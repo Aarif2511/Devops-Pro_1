@@ -1,0 +1,31 @@
+{
+  "name": "devops-build",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build"
+  },
+  "dependencies": {
+    "core-js": "^3.42.0",
+    "postcss": "8.4.31",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-scripts": "^3.0.1",
+    "resolve-url-loader": "5.0.0",
+    "semver": "7.5.4",
+    "serialize-javascript": "6.0.1",
+    "shell-quote": "1.8.1",
+    "terser": "5.27.1",
+    "webpack-dev-middleware": "5.3.4"
+  },
+  "resolutions": {
+    "string-width-cjs": "npm:string-width@4.2.3"
+  }
+},
+"overrides": {
+  "semver": "7.5.4",
+  "serialize-javascript": "6.0.1",
+  "shell-quote": "1.8.1",
+  "terser": "5.27.1"
+}
