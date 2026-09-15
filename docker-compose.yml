@@ -1,7 +1,33 @@
-version: '3.8'
 services:
   web:
-    build: .
+    image: ${IMAGE_NAME:-aarif2511/prod}:${IMAGE_TAG:-latest}
+    container_name: devops-react
+    restart: unless-stopped
+
     ports:
-      - "80:80"
-    restart: always
+      - "80:8080"
+
+    read_only: true
+
+    tmpfs:
+      - /tmp
+      - /var/cache/nginx
+      - /var/run
+
+    security_opt:
+      - no-new-privileges:true
+
+    healthcheck:
+      test:
+        [
+          "CMD",
+          "wget",
+          "-q",
+          "-O",
+          "/dev/null",
+          "http://127.0.0.1:8080/health"
+        ]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 10s
