@@ -12,7 +12,10 @@ cd /opt/devops-build
 
 echo "Deploying ${IMAGE_NAME}:${IMAGE_TAG}"
 
+echo "Pulling production image..."
 docker compose pull
+
+echo "Starting application..."
 docker compose up -d --remove-orphans
 
 echo "Waiting for application health..."
@@ -24,6 +27,7 @@ for i in {1..20}; do
         exit 0
     fi
 
+    echo "Health check attempt ${i}/20 failed. Retrying..."
     sleep 3
 done
 
