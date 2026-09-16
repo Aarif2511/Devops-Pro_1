@@ -1,6 +1,6 @@
 services:
   web:
-    image: ${IMAGE_NAME:-YOUR_DOCKERHUB_USERNAME/prod}:${IMAGE_TAG:-latest}
+    image: ${IMAGE_NAME:-aarif2511/prod}:${IMAGE_TAG:-latest}
     container_name: devops-react
     restart: unless-stopped
 
